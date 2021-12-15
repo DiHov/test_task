@@ -1,12 +1,12 @@
-from ping3 import ping
 from django.contrib.auth import get_user_model
+from django.shortcuts import render
 from djoser import views
+from ping3 import ping
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 
-
-from .serializers import PingSerializer
 from .models import Ping
+from .serializers import PingSerializer
 
 CustomUser = get_user_model()
 
@@ -23,3 +23,4 @@ class PingGoogle(GenericAPIView):
         data = Ping(latency=round(latency, 2))
         serializer = PingSerializer(data)
         return Response(serializer.data)
+

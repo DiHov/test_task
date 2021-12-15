@@ -1,12 +1,11 @@
+from django.conf.urls import url
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework_simplejwt.views import (TokenObtainPairView,
-                                            TokenRefreshView, TokenViewBase)
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signin/', TokenObtainPairView.as_view(), name='token_obtain'),
-    path('logout/', TokenViewBase.as_view(), name='token_destoy'),
-    path('signin/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    url(r'^signin/', obtain_jwt_token),
+    url(r'^signin/refresh/', refresh_jwt_token),
     path('', include('users.urls')),
 ]

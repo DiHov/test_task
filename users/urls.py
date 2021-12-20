@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import CustomUserViewSet, PingGoogle, index
+from .views import CustomUserViewSet, PingGoogle
 
 # router = DefaultRouter()
 # router.register('users', CustomUserViewSet)

@@ -5,7 +5,7 @@
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link to="/home" class="nav-link">
-            <font-awesome-icon icon="home" />Home
+            <font-awesome-icon icon="home" /> Latency
           </router-link>
         </li>
       </div>
@@ -52,20 +52,6 @@ export default {
     currentUser() {
       return this.$store.state.auth.user;
     },
-    // showAdminBoard() {
-    //   if (this.currentUser && this.currentUser.roles) {
-    //     return this.currentUser.roles.includes('ROLE_ADMIN');
-    //   }
-
-    //   return false;
-    // },
-    // showModeratorBoard() {
-    //   if (this.currentUser && this.currentUser.roles) {
-    //     return this.currentUser.roles.includes('ROLE_MODERATOR');
-    //   }
-
-    //   return false;
-    // }
   },
   methods: {
     logOut() {
